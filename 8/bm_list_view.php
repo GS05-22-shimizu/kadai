@@ -1,31 +1,34 @@
 <?php
+//0.外部ファイル読み込み
+include("functions.php");
+
 //1.  DB接続します
-try {
-  $pdo = new PDO('mysql:dbname=gs_db;charset=utf8;host=localhost','root','');
-} catch (PDOException $e) {
-  exit('DbConnectError:'.$e->getMessage());
-}
+$pdo = db_con();
 
 //２．データ登録SQL作成
-//最新の5件のみ表示するSQLに変更してブラウザに表示する
-$stmt = $pdo->prepare("SELECT * FROM gs_bm_table ORDER BY indate DESC LIMIT 5");
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 $status = $stmt->execute();
-
-
 
 //３．データ表示
 $view="";
 if($status==false){
   //execute（SQL実行時にエラーがある場合）
-  $error = $stmt->errorInfo();
-  exit("ErrorQuery:".$error[2]);
-
+  queryError($stmt);
 }else{
-  //Selectデータの数だけ自動でループしてくれる 毎回コピーで使用。1レコードづつ$resultに入れてくれる。.=データを追加する
+  //Selectデータの数だけ自動でループしてくれる
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
-    $view .= $result["indate"]."=".$result["book_name"]."=".$result["book_url"]."<br>";
+    $view .= '<p>';
+    $view .= '<a href="bm_update_view.php?id='.$result["id"].'">';
+    $view .= $result["book_name"]."[".$result["indate"]."]";
+    $view .= '</a>  ';
+    $view .= '<a href="delete.php?id='.$result["id"].'">';
+    $view .= '[削除]';
+    $view .= '<a href="bm_update.php?id='.$result["id"].'">';
+    $view .= '[更新]';
+    $view .= '</a>';
+    $view .= '</p>';
+      
   }
-
 }
 ?>
 
@@ -47,8 +50,7 @@ if($status==false){
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-      <a class="navbar-brand" href="bm_insert.php">データ登録</a>
-      </div>
+      <a class="navbar-brand" href="bm_update_view.php">データ登録</a>
     </div>
   </nav>
 </header>
@@ -57,6 +59,7 @@ if($status==false){
 <!-- Main[Start] -->
 <div>
     <div class="container jumbotron"><?=$view?></div>
+  </div>
 </div>
 <!-- Main[End] -->
 
