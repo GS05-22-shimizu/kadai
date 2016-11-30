@@ -1,0 +1,185 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+#menu ul{ 
+margin: 0; 
+padding: 0; 
+list-style: none; 
+}
+#menu li{ 
+padding: 0; 
+margin: 0; 
+}
+#menu li a{
+display: block; 
+background: url(gazo.gif) no-repeat;
+border: 0px
+padding: 3px;
+text-decoration: none;
+color: #333;
+width: 180px; 
+height: 32px;
+margin: 0px 0px 2px 0px;
+padding: 4px;
+text-align: center;
+font-size: 14px;
+}
+#menu li a:hover{
+display: block; 
+text-decoration: underline;
+}
+
+/*--------------------------------------------
+  index page 
+--------------------------------------------*/
+.brand-logo{
+font-family: calbri;
+font-size: 20px;
+
+}
+
+
+
+
+
+/*--------------------------------------------
+  kensaku1 page 
+--------------------------------------------*/
+.wrapper{
+width: 960px;
+height: 400px;
+margin:0 auto;
+font-family: yu gothic;
+}
+
+.cols3{
+width: 450px;
+float:left;
+}
+
+.cols9{
+width: 450px;
+float:left;
+}
+
+.btn {
+color: #F5F5F5;
+width: 300px;
+padding: 10px 0;
+padding-bottom: 10px;
+text-align: center;
+}
+
+.collection{
+color: darkgrey;
+width: 300px;
+text-align: center;
+font-family: Yu Gothic;    
+}
+
+#kensaku page title{
+font-family: Yu Gothic;
+font-size: 20px;    
+    
+}
+
+/*--------------------------------------------
+  kensaku1 page 
+--------------------------------------------*/
+.leftnavi{
+width: 200px;
+float:left;
+}
+
+.kensaku2main{
+width: 760px;
+height: inherit;
+float:left;
+}
+
+.stylistpickup{
+width: 200px;
+height: 180px;
+margin-right: 20px;
+margin-left: 20px;
+margin-bottom: 20px;
+float:left;
+}
+
+.stylistname{
+font-family: Yu Gothic;
+font-size: 15px; 
+text-align: center;
+    
+}
+
+.kensaku2mainheader{
+font-family: Yu Gothic;
+font-size: 20px;  
+text-align: center;
+margin-top: 10px;
+}
+
+/*--------------------------------------------
+  profile page 
+--------------------------------------------*/
+.wrapperprofile{
+width: 760px;
+height: inherit;
+float:left;
+}
+
+.profiletable{
+font-family: yu gothic;
+font-size: 15px;
+text-align: left;
+}
