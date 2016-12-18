@@ -82,33 +82,83 @@ text-decoration: underline;
   index page 
 --------------------------------------------*/
 .brand-logo{
-font-family: calbri;
+font-family: inherit;
+font-style: oblique;
 font-size: 20px;
+color: darkgray;
 
 }
 
+.col s12 m4{
+height: auto;
+    
+}
 
+.parallax{
+height: 900px;
+    
+}
 
+.input-field s6{
+margin-top: 20px;    
+    
+}
 
+.footer-copyright{
+background-color: silver;
+height: 30px;
+font-family: monospace;
+
+}
+
+.snapwidget{
+font-family: serif;
+font-size: 30px;
+text-align: center;
+}
 
 /*--------------------------------------------
   kensaku1 page 
 --------------------------------------------*/
 .wrapper{
 width: 960px;
-height: 400px;
+height: 2202px;
 margin:0 auto;
 font-family: yu gothic;
+}
+
+.checkbox {
+  display: none;
+}
+.checkbox + .checkbox-icon {
+  position: relative;
+  vertical-align: middle;
+}
+.checkbox + .checkbox-icon:before {
+  content: "\f372";
+  font-family: "Ionicons";
+  color: #ccc;
+  font-size: 22px;
+}
+.checkbox:checked + .checkbox-icon:before {
+  content: "\f374";
+  color: #17bcdf;
 }
 
 .cols3{
 width: 450px;
 float:left;
+position: absolute;
 }
 
 .cols9{
-width: 450px;
-float:left;
+width: 700px;
+height: 400px;
+}
+
+.cols10{
+width: 700px;
+height: 400px;
 }
 
 .btn {
@@ -133,17 +183,28 @@ font-size: 20px;
 }
 
 /*--------------------------------------------
-  kensaku1 page 
+  kensaku2 page 
 --------------------------------------------*/
 .leftnavi{
 width: 200px;
 float:left;
+margin-top: 30px;
 }
+
+.input-field s6{
+text-align: center;
+font-size: 20px;
+}
+
+label{
+font-size: 20px;
+}
+
 
 .kensaku2main{
 width: 760px;
 height: inherit;
-float:left;
+float:right;
 }
 
 .stylistpickup{
@@ -167,7 +228,14 @@ font-family: Yu Gothic;
 font-size: 20px;  
 text-align: center;
 margin-top: 10px;
+
 }
+
+.header{
+font-family: Yu Gothic;
+font-size: 20px;
+}
+
 
 /*--------------------------------------------
   profile page 
