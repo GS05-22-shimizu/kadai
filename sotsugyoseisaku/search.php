@@ -1,26 +1,69 @@
 <?php
 //0.外部ファイル読み込み
-include("functions.php")
+//include("functions.php");
+
+//1.  DB接続します
+//$pdo = db_con();
+
+//利用するデータベース
+
+//２．データ登録SQL作成
+//$stmt = $pdo->prepare("SELECT * FROM stylist");
+//$status = $stmt->execute();
+
+//3. My SQLデータベースに接続する
+//$prefecture = $_POST["prefecture"];
+
+//4.SQL文を作る
+//$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+//5.プリペアードステートメントを作る
+//$sql = "SELECT * FROM member WHERE prefecture LIKE (:prefecture)";
+
+//利用するデータベース
+//$dbName = 'sotsugyo';
+
+//MySQLサーバ
+//$host = 'localhost:'
 
 
-
-
-
-
-
-
+<?php
+//データベースユーザ
+$user = 'root';
+$password = '';
+//利用するデータベース
+$dbName = 'sotsugyo';
+//MySQLサーバ
+$host = '127.0.0.1';
+//MySQLのDSN文字列
+$dsn="mysql:dbname=dbname;host=localhost;charset=utf8";
 
 ?>
 
+<?php
+$prefecture = $_POST["prefecture"];
+//MySQLデータベースに接続する
+try{
+  $pdo=new PDO($dsn,$user,$pass);
+}catch(Exception $e){
+  echo 'error' .$e->getMesseage;
+  die();
+}
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
+//SQL文を作る
+$sql="SELECT * FROM member WHERE prefecture LIKE (:prefecture)";
+//プリペアードステートメントを作る
+$stmt=$pdo->query($sql);
+//プレースホルダに値をバインドする
+$stm->bindValue (':name', "%{$name}%",PDO::PARAM_STR);
+//SQL文を実行する
+$stm->execute();
+//結果の取得
+$result=$stmt->fetchAll();
 
-
-
-
-
-
-
-
+//$form=strip_tags($_GET['prefecture']);
+?>
 
 
 <!DOCTYPE html>
@@ -96,29 +139,31 @@ include("functions.php")
     $(document).ready(function() {
       $('select').material_select();
     });
-    </script> 
-          
-             
+    </script>      
                    
         
        <!-- スタイリストpickup 一覧  -->
-      <form class="kensaku2main">
+      <div class="kensaku2main">
           
-          <div class="col s12 m7">
-        <h2 class="header">スタイリスト一覧</h2>
-    <div class="card horizontal">
+      <div class="col s12 m7">
+      <h2 class="header">スタイリスト一覧</h2>
+    
+     <?php foreach ($search as $post) :?>   
+      <div class="card horizontal">
       <div class="card-image">
+        <?php echo $_post['picture'] ?>
         <img src="img/sawaki%20yuko%206.jpg">
       </div>
       <div class="card-stacked">
         <div class="card-content">
-          <p>澤木祐子<br>東京<br>社団法人国際スタイリングカウンセラー協会代表理事。スタイリスト歴36年の経験を生かして心と体をテーマに幸せになるトータルライフコーディネートを提案!</p>
+         <p><?php echo $_post['name'] ?>澤木祐子<br>東京<br>社団法人国際スタイリングカウンセラー協会代表理事。スタイリスト歴36年の経験を生かして心と体をテーマに幸せになるトータルライフコーディネートを提案!</p>
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
         </div>  
     </div> 
       </div>
+              
     <div class="card horizontal">
       <div class="card-image">
         <img src="sawaki%20yuko3.jpg">
@@ -140,7 +185,7 @@ include("functions.php")
     </div> 
     
   <!-- Footer -->
-    <footer class="page-footer teal">
+    <footer class="page-footer teal">a
     <div class="container">
       <div class="row">
         <div class="col l6 s12">

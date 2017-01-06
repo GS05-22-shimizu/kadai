@@ -14,7 +14,7 @@
  <!-- Navbar goes here -->
     <nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo">Find-Stylist</a>
+      <a id="logo-container" href="#" class="brand-logo"><img src="1_Primary_logo_on_transparent_218x69.png"></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="#">Navbar Link</a></li>
       </ul>
@@ -27,28 +27,49 @@
   </nav>
     
 <div class="wrapper">
-      <div class="leftnavi">
+      
+       <form class="leftnavi">
         <!-- navigation bar -->
-            <p>地域で探す</p>
-            <ul>
-            <li><a href="#!" class="collection-item">東京</a></li>
-            <li><a href="#!" class="collection-item">神奈川</a></li>
-            <li><a href="#!" class="collection-item">千葉</a></li>
-            <li><a href="#!" class="collection-item">埼玉</a></li>
-            <li><a href="#!" class="collection-item">関西</a></li>
-            <li><a href="#!" class="collection-item">その他</a></li>
-          </ul>
-            <p>サービスで探す</p>
-            <ul>
-            <li><a href="#!" class="collection-item">コンサルティング</a></li>
-            <li><a href="#!" class="collection-item">ショッピング同行</a></li>
-            <li><a href="#!" class="collection-item">ショッピングクルーズ</a></li>
-            <li><a href="#!" class="collection-item">ワードローブ診断</a></li>
-            <li><a href="#!" class="collection-item">スタイルブック制作</a></li>
-            <li><a href="#!" class="collection-item">その他</a></li>
-          </ul>
-         </div>
-        
+          <div class="container">  
+        <div class="row">
+        <div class="input-field s6">      
+        <select class="validate" name="prefecture">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">東京</option>
+        <option value="2">神奈川</option>
+        <option value="3">埼玉</option>
+        <option value="3">関西</option>
+        <option value="3">その他の地域</option>
+      </select>
+      <label >地域で探す</label>
+        </div>
+        <div class="input-field s7">      
+      <select class="validate" name="service">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">コンサルティング</option>
+        <option value="2">ショッピング同行</option>
+        <option value="3">ショッピングクルーズ</option>
+        <option value="3">ワードローブ診断</option>
+        <option value="3">その他</option>
+      </select>
+      <label >サービスで探す</label>
+        </div>
+        </div>
+
+<input id="submit2_button" type="submit" name="submit" value="さがす">
+</div>
+</form> 
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+    </script>      
+    
        <!-- スタイリスト紹介  -->
       <div class="wrapperprofile">
         <div class="wrapperprofileheader">Profile</div>
@@ -87,6 +108,8 @@
       
         <div class="coordinate">
             <p><img src="c_nobuta1.jpg"></p>
+    </div>
+          </div>
     </div>
     
      <!--  footer-->
