@@ -48,6 +48,20 @@ nav .brand-logo {
 
 footer.page-footer {
   margin: 0;
+  background-color: ghostwhite;
+}
+
+.footer-logo{
+  font-family: cursive;
+  font-size: 20px;
+  color: grey;
+}
+
+.footer-comment{
+  font-family: cursive;
+  font-size: 10px;
+  color: grey;
+  width: auto;
 }
 
 #menu ul{ 
@@ -100,7 +114,20 @@ height: 900px;
 }
 
 .input-field s6{
-margin-top: 20px;    
+margin-top: 20px;
+
+}
+
+.validate{
+background-color: white;
+border: gray;
+color: gray;
+
+}
+
+.section{
+width: auto;
+padding: 0;
     
 }
 
@@ -117,14 +144,34 @@ font-size: 30px;
 text-align: center;
 }
 
+.container{
+margin-top: 40px;
+}
+
+input#submit_button {
+    margin-left: 200px;;
+    width: 300px;
+    height: 40px; 
+    font-size: 15px;
+    border: solid 3px white;
+    background-color: transparent;
+    font color: darkgray;
+    font-family: inherit;
+}
 /*--------------------------------------------
   kensaku1 page 
 --------------------------------------------*/
+.wrappercover{
+background-color: slategray;
+}
+
 .wrapper{
-width: 960px;
+margin-top: 30px;
+width: 980px;
 height: 2202px;
 margin:0 auto;
 font-family: yu gothic;
+
 }
 
 .checkbox {
@@ -178,8 +225,7 @@ font-family: Yu Gothic;
 
 #kensaku page title{
 font-family: Yu Gothic;
-font-size: 20px;    
-    
+font-size: 20px;
 }
 
 /*--------------------------------------------
@@ -198,6 +244,11 @@ font-size: 20px;
 
 label{
 font-size: 20px;
+}
+
+.btn{
+width:140px;
+text-align: justify;
 }
 
 
@@ -232,9 +283,30 @@ margin-top: 10px;
 }
 
 .header{
-font-family: Yu Gothic;
+font-family: monospace;
 font-size: 20px;
+text-align: center;
 }
+
+.card-image{
+width: 216px;
+}
+
+input#submit2_button {
+    position: inherit;
+    width: 150px;
+    height: 50px; 
+    font-size: 15px;
+    border: solid 3px white;
+    background-color: whitesmoke;
+    font color: white;
+    font-family: inherit;
+}
+
+.card horizontal{
+    background-color: whitesmoke;
+}
+
 
 
 /*--------------------------------------------
@@ -250,4 +322,15 @@ float:left;
 font-family: yu gothic;
 font-size: 15px;
 text-align: left;
+}
+
+.profile{
+font-family: sans-serif;
+font-size: 15px;
+text-align: center;   
+}
+
+.gazo-box{
+float: left;
+box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.8); 
 }
